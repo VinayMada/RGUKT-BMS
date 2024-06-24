@@ -14,7 +14,7 @@ function AdminPostLogin() {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/events');
+      const response = await axios.get('https://rgukt-bms.onrender.com/api/events');
       const currentDate = new Date();
       const upcomingEvents = response.data.filter(event => new Date(event.time) >= currentDate);
       setEvents(upcomingEvents);
@@ -29,7 +29,7 @@ function AdminPostLogin() {
 
   const downloadStudentsList = async (eventId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/events/download/${eventId}`);
+      const response = await axios.get(`https://rgukt-bms.onrender.com/api/events/download/${eventId}`);
       const students = response.data;
 
       // Create Excel workbook and worksheet

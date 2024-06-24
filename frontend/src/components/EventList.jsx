@@ -8,7 +8,7 @@ function EventList() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/events');
+        const response = await axios.get('https://rgukt-bms.onrender.com/api/events');
         setEvents(response.data);
       } catch (error) {
         console.error('Error fetching events', error);
@@ -20,7 +20,7 @@ function EventList() {
 
   const downloadStudentList = async (eventId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/events/download/${eventId}`);
+      const response = await axios.get(`https://rgukt-bms.onrender.com/api/events/download/${eventId}`);
       // Handle the download of the student list
       console.log(response.data);
     } catch (error) {

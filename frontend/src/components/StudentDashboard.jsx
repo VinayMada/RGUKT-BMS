@@ -10,7 +10,7 @@ export default function StudentDashboard({ studentId }) {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/events');
+        const response = await axios.get('https://rgukt-bms.onrender.com/api/events');
         const currentDate = new Date();
         const upcomingEvents = response.data.filter(event => new Date(event.time) >= currentDate);
         setEvents(upcomingEvents);
@@ -25,7 +25,7 @@ export default function StudentDashboard({ studentId }) {
   const registerForEvent = async (eventId) => {
     console.log('Registering for event. Student ID:', studentId, 'Event ID:', eventId);
     try {
-      const response = await axios.post(`http://localhost:5000/api/events/register/${eventId}`, { studentId });
+      const response = await axios.post(`https://rgukt-bms.onrender.com/api/events/register/${eventId}`, { studentId });
       alert(response.data.message);
 
       if (response.data.success) {

@@ -13,7 +13,7 @@ export default function LoginForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', { username, password });
+      const response = await axios.post('https://rgukt-bms.onrender.com/api/auth/login', { username, password });
       let studentId=null;
       if(response.data.stu!=null)
         studentId=response.data.stu._id;

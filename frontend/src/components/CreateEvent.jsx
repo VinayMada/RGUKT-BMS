@@ -14,7 +14,7 @@ function CreateEvent({setShowEvents,fetchEvents}) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/events/create', { programName, time, deadline });
+      const response = await axios.post('https://rgukt-bms.onrender.com/api/events/create', { programName, time, deadline });
       alert('Event created successfully!');
       setProgramName('');
       setTime('');
